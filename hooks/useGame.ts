@@ -1,49 +1,66 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { Verse, GameState } from '@/lib/types';
-import { verses } from '@/lib/verses';
+import { PuzzleLevel } from '@/lib/puzzles/types';
+import { GameState } from '@/types';
 
-export function useGame() {
+export function useGame(puzzles: PuzzleLevel[], initialVerseId?: string) {
+  const startIndex = initialVerseId 
+    ? puzzles.findIndex(v => v.id === initialVerseId) 
+    : 0;
+
   const [gameState, setGameState] = useState<GameState>({
-    currentVerseIndex: 0,
+    currentVerseIndex: startIndex >= 0 ? startIndex : 0,
     score: 0,
     attempts: 0,
+    currentStage: 0,
     isCorrect: null,
     guessedVerses: [],
   });
 
-  const currentVerse = verses[gameState.currentVerseIndex];
+  const currentPuzzle = puzzles[gameState.currentVerseIndex];
 
   const checkGuess = useCallback((guess: string) => {
-    const normalizedGuess = guess.toLowerCase().trim();
-    const normalizedReference = currentVerse.reference.toLowerCase();
+    if (!currentPuzzle) return false;
 
-    // Check if guess matches the reference (flexible matching)
-    // Accept formats like: "John 3:16", "john 3 16", "jn 3:16", etc.
+    const normalizedGuess = guess.toLowerCase().trim();
+    const normalizedReference = currentPuzzle.reference.toLowerCase();
+
+    // Flexible matching
     const isMatch =
       normalizedReference.includes(normalizedGuess) ||
       normalizedGuess.includes(normalizedReference.replace(/\s/g, '')) ||
       normalizedGuess === normalizedReference.replace(/\s/g, '');
 
-    setGameState(prev => ({
-      ...prev,
-      attempts: prev.attempts + 1,
-      isCorrect: isMatch,
-      score: isMatch ? prev.score + 1 : prev.score,
-      guessedVerses: isMatch
-        ? [...prev.guessedVerses, currentVerse.id]
-        : prev.guessedVerses,
-    }));
+    setGameState(prev => {
+      // If correct, we don't increment stage, just score
+      if (isMatch) {
+        return {
+          ...prev,
+          attempts: prev.attempts + 1,
+          isCorrect: true,
+          score: prev.score + 1,
+          guessedVerses: [...prev.guessedVerses, currentPuzzle.id],
+        };
+      } 
+      
+      // If incorrect, increment stage (reveal next clue) up to 6
+      const nextStage = Math.min(prev.currentStage + 1, 6);
+      return {
+        ...prev,
+        attempts: prev.attempts + 1,
+        currentStage: nextStage,
+        isCorrect: false,
+      };
+    });
 
     return isMatch;
-  }, [currentVerse]);
+  }, [currentPuzzle]);
 
   const nextVerse = useCallback(() => {
     const nextIndex = gameState.currentVerseIndex + 1;
 
-    if (nextIndex >= verses.length) {
-      // Game over - could reset or show final score
+    if (nextIndex >= puzzles.length) {
       return false;
     }
 
@@ -51,33 +68,37 @@ export function useGame() {
       ...prev,
       currentVerseIndex: nextIndex,
       isCorrect: null,
+      currentStage: 0, // Reset stage for new puzzle
     }));
 
     return true;
-  }, [gameState.currentVerseIndex]);
+  }, [gameState.currentVerseIndex, puzzles.length]);
 
   const resetGame = useCallback(() => {
     setGameState({
       currentVerseIndex: 0,
       score: 0,
       attempts: 0,
+      currentStage: 0,
       isCorrect: null,
       guessedVerses: [],
     });
   }, []);
 
   const skipVerse = useCallback(() => {
+    // Skipping counts as a loss/fail for this puzzle? 
+    // For now just move next.
     nextVerse();
   }, [nextVerse]);
 
   return {
     gameState,
-    currentVerse,
+    currentPuzzle,
     checkGuess,
     nextVerse,
     resetGame,
     skipVerse,
-    totalVerses: verses.length,
-    isGameOver: gameState.currentVerseIndex >= verses.length - 1 && gameState.isCorrect !== null,
+    totalVerses: puzzles.length,
+    isGameOver: gameState.currentVerseIndex >= puzzles.length - 1 && gameState.isCorrect !== null,
   };
 }

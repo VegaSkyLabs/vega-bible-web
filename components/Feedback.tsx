@@ -1,15 +1,15 @@
 'use client';
 
-import { Verse } from '@/lib/types';
+import { PuzzleLevel } from '@/lib/puzzles/types';
 
 interface FeedbackProps {
   isCorrect: boolean | null;
-  verse: Verse;
+  puzzle: PuzzleLevel;
   onNext: () => void;
   isLastVerse: boolean;
 }
 
-export default function Feedback({ isCorrect, verse, onNext, isLastVerse }: FeedbackProps) {
+export default function Feedback({ isCorrect, puzzle, onNext, isLastVerse }: FeedbackProps) {
   if (isCorrect === null) return null;
 
   return (
@@ -29,15 +29,15 @@ export default function Feedback({ isCorrect, verse, onNext, isLastVerse }: Feed
                 <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="font-bold">Not quite...</span>
+                <span className="font-bold">Incorrect</span>
               </>
             )}
           </div>
         </div>
 
         <div className="mt-4">
-          <p className="font-semibold">{verse.reference}</p>
-          <p className="text-sm mt-2 italic">{verse.text}</p>
+          <p className="font-semibold">{puzzle.reference}</p>
+          <p className="text-sm mt-2 italic">{puzzle.fullText}</p>
         </div>
 
         <div className="mt-4 flex justify-end">

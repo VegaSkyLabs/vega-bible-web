@@ -1,5 +1,8 @@
-import Game from '@/components/Game';
+import PuzzleList from '@/components/PuzzleList';
+import { getAllPuzzlePackages } from '@/lib/puzzles/loader'; // Import the new loader
 
-export default function Home() {
-  return <Game />;
+export default async function Home() {
+  const packages = await getAllPuzzlePackages(); // Fetch data on the server
+
+  return <PuzzleList packages={packages} />;
 }
