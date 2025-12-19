@@ -11,6 +11,7 @@ export interface GameState {
   attempts: number;       // Total wrong guesses across the session
   currentStage: number;   // 0-6, representing which image clue is shown
   isCorrect: boolean | null;
+  isPuzzleFailed: boolean; // True when ran out of hints for current puzzle
   guessedVerses: string[]; // IDs of solved puzzles
 }
 
