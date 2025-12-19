@@ -1,0 +1,15 @@
+{
+  "id": "starter-pack",
+  "title": "Biblical Foundations",
+  "description": "Essential verses about faith, creation, and love.",
+  "coverImage": "/images/puzzles/starter-pack/cover/cover.jpeg",
+  "difficulty": "Easy",
+  "puzzleIds": [
+    "john-3-16",
+    "psalm-23-1",
+    "genesis-1-1",
+    "philippians-4-13",
+    "proverbs-3-5-6",
+    "romans-8-28"
+  ]
+}
