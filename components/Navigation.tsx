@@ -14,6 +14,9 @@ export default function Navigation() {
             <Link href="/">Play</Link>
           </li>
           <li>
+            <Link href="/puzzles">All Puzzles</Link>
+          </li>
+          <li>
             <Link href="/about">About</Link>
           </li>
         </ul>
