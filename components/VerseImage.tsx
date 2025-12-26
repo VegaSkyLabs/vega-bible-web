@@ -13,8 +13,8 @@ export default function VerseImage({ imagePath, reference, revealed = false }: V
   const [imageError, setImageError] = useState(false);
 
   return (
-    <div className="card bg-base-100 shadow-xl">
-      <figure className="p-6">
+    <div id="verse-image" className="verse-image card bg-base-100 shadow-xl">
+      <figure className="verse-image-figure">
         <div className="relative w-full h-96 bg-base-200 rounded-lg overflow-hidden">
           {imageError ? (
             // Fallback placeholder when image fails to load
