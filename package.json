@@ -1,6 +1,6 @@
 {
-  "name": "vega-bible-guess-the-verse",
-  "version": "0.1.0",
+  "name": "vega-bible-web",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
