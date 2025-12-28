@@ -1,50 +1,47 @@
 'use client';
 
-import { Verse } from '@/lib/types';
+import { PuzzleLevel } from '@/lib/puzzles/types';
+import { ChevronRightIcon } from '@heroicons/react/24/outline';
 
 interface FeedbackProps {
   isCorrect: boolean | null;
-  verse: Verse;
+  puzzle: PuzzleLevel;
   onNext: () => void;
   isLastVerse: boolean;
 }
 
-export default function Feedback({ isCorrect, verse, onNext, isLastVerse }: FeedbackProps) {
+export default function Feedback({ isCorrect, puzzle, onNext, isLastVerse }: FeedbackProps) {
   if (isCorrect === null) return null;
 
   return (
-    <div className={`alert ${isCorrect ? 'alert-success' : 'alert-error'} shadow-lg`}>
-      <div className="w-full">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            {isCorrect ? (
-              <>
-                <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="font-bold">Correct! 🎉</span>
-              </>
-            ) : (
-              <>
-                <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span className="font-bold">Not quite...</span>
-              </>
-            )}
-          </div>
-        </div>
+    <div className={`rounded-2xl p-4 ${isCorrect ? 'bg-success' : 'bg-error'}`}>
+      <div className="flex items-center gap-2">
+        {isCorrect ? (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="font-bold">Correct! 🎉</span>
+          </>
+        ) : (
+          <>
+            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="font-bold">Out of Hints! The answer was:</span>
+          </>
+        )}
+      </div>
 
-        <div className="mt-4">
-          <p className="font-semibold">{verse.reference}</p>
-          <p className="text-sm mt-2 italic">{verse.text}</p>
-        </div>
+      <div className="mt-4">
+        <p className="font-semibold">{puzzle.reference}</p>
+        <p className="text-sm mt-2 italic">{puzzle.fullText}</p>
+      </div>
 
-        <div className="mt-4 flex justify-end">
-          <button className="btn btn-sm" onClick={onNext}>
-            {isLastVerse ? 'View Results' : 'Next Verse →'}
-          </button>
-        </div>
+      <div className="mt-4 flex justify-center">
+        <button className="btn btn-sm pl-5 pr-3" onClick={onNext}>
+          {isLastVerse ? 'View Results' : 'Next Verse'} <ChevronRightIcon className="h-4 w-4" />
+        </button>
       </div>
     </div>
   );
