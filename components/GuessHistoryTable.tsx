@@ -4,6 +4,12 @@ import { useMemo } from 'react';
 import { ComparisonResult, HintStatus, Direction } from '@/lib/guessComparison';
 import { ALL_CATEGORIES } from '@/lib/bibleMetadata';
 import CategoryBadge from './CategoryBadge';
+import {
+  ArrowLongUpIcon,
+  ArrowLongDownIcon,
+  ArrowLongLeftIcon,
+  ArrowLongRightIcon,
+} from '@heroicons/react/24/outline';
 
 interface GuessHistoryTableProps {
   guesses: ComparisonResult[];
@@ -21,28 +27,18 @@ function getStatusColor(status: HintStatus): string {
   }
 }
 
-// Get arrow indicator for numerical values (chapter/verse)
-function getArrow(direction: Direction): string {
-  switch (direction) {
-    case 'up':
-      return '↑';
-    case 'down':
-      return '↓';
-    case 'none':
-      return '';
-  }
+// Arrow icon for numerical values (chapter/verse)
+function ArrowIcon({ direction }: { direction: Direction }) {
+  if (direction === 'none') return null;
+  const Icon = direction === 'up' ? ArrowLongUpIcon : ArrowLongDownIcon;
+  return <Icon className="h-5 w-5" />;
 }
 
-// Get arrow indicator for Testament (timeline: Old → New)
-function getTestamentArrow(direction: Direction): string {
-  switch (direction) {
-    case 'down':
-      return '→'; // Go forward (Old → New)
-    case 'up':
-      return '←'; // Go back (New → Old)
-    case 'none':
-      return '';
-  }
+// Arrow icon for Testament (timeline: Old → New)
+function TestamentArrowIcon({ direction }: { direction: Direction }) {
+  if (direction === 'none') return null;
+  const Icon = direction === 'up' ? ArrowLongLeftIcon : ArrowLongRightIcon;
+  return <Icon className="h-5 w-5" />;
 }
 
 export default function GuessHistoryTable({ guesses }: GuessHistoryTableProps) {
@@ -125,11 +121,7 @@ export default function GuessHistoryTable({ guesses }: GuessHistoryTableProps) {
               )}`}
             >
               <span>{guess.testament.value}</span>
-              {guess.testament.direction !== 'none' && (
-                <span className="text-lg font-bold">
-                  {getTestamentArrow(guess.testament.direction)}
-                </span>
-              )}
+              <TestamentArrowIcon direction={guess.testament.direction} />
             </div>
 
             {/* Category */}
@@ -149,11 +141,7 @@ export default function GuessHistoryTable({ guesses }: GuessHistoryTableProps) {
               )}`}
             >
               <span>{guess.chapter.value || '?'}</span>
-              {guess.chapter.direction !== 'none' && (
-                <span className="text-lg font-bold">
-                  {getArrow(guess.chapter.direction)}
-                </span>
-              )}
+              <ArrowIcon direction={guess.chapter.direction} />
             </div>
 
             {/* Verse with arrow */}
@@ -163,11 +151,7 @@ export default function GuessHistoryTable({ guesses }: GuessHistoryTableProps) {
               )}`}
             >
               <span>{guess.verse.value || '?'}</span>
-              {guess.verse.direction !== 'none' && (
-                <span className="text-lg font-bold">
-                  {getArrow(guess.verse.direction)}
-                </span>
-              )}
+              <ArrowIcon direction={guess.verse.direction} />
             </div>
           </div>
         ))}
@@ -188,11 +172,13 @@ export default function GuessHistoryTable({ guesses }: GuessHistoryTableProps) {
           <span>Wrong</span>
         </div>
         <div className="flex items-center gap-1">
-          <span>↑↓</span>
+          <span>↑</span>
+          <span>↓</span>
           <span>Higher/Lower</span>
         </div>
         <div className="flex items-center gap-1">
-          <span>←→</span>
+          <span>←</span>
+          <span>→</span>
           <span>Old/New</span>
         </div>
       </div>
