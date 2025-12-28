@@ -1,6 +1,13 @@
 'use client';
 
 import { ComparisonResult, HintStatus, Direction } from '@/lib/guessComparison';
+import {
+  ArrowLongUpIcon,
+  ArrowLongDownIcon,
+  ArrowLongLeftIcon,
+  ArrowLongRightIcon,
+  ChevronDownIcon,
+} from '@heroicons/react/24/outline';
 
 interface LastGuessSummaryProps {
   guess: ComparisonResult;
@@ -20,26 +27,16 @@ function getStatusColor(status: HintStatus): string {
   }
 }
 
-function getArrow(direction: Direction): string {
-  switch (direction) {
-    case 'up':
-      return '↑';
-    case 'down':
-      return '↓';
-    case 'none':
-      return '';
-  }
+function ArrowIcon({ direction }: { direction: Direction }) {
+  if (direction === 'none') return null;
+  const Icon = direction === 'up' ? ArrowLongUpIcon : ArrowLongDownIcon;
+  return <Icon className="h-5 w-5" />;
 }
 
-function getTestamentArrow(direction: Direction): string {
-  switch (direction) {
-    case 'down':
-      return '→';
-    case 'up':
-      return '←';
-    case 'none':
-      return '';
-  }
+function TestamentArrowIcon({ direction }: { direction: Direction }) {
+  if (direction === 'none') return null;
+  const Icon = direction === 'up' ? ArrowLongLeftIcon : ArrowLongRightIcon;
+  return <Icon className="h-5 w-5" />;
 }
 
 export default function LastGuessSummary({ guess, onViewAll, className, id }: LastGuessSummaryProps) {
@@ -51,7 +48,7 @@ export default function LastGuessSummary({ guess, onViewAll, className, id }: La
           onClick={onViewAll}
           className="text-[12px] text-primary hover:underline font-medium"
         >
-          View all ↓
+          View all <ChevronDownIcon className="h-4 w-4 inline" />
         </button>
       </div>
 
@@ -82,11 +79,7 @@ export default function LastGuessSummary({ guess, onViewAll, className, id }: La
           )}`}
         >
           <span>{guess.testament.value}</span>
-          {guess.testament.direction !== 'none' && (
-            <span className="text-lg font-bold">
-              {getTestamentArrow(guess.testament.direction)}
-            </span>
-          )}
+          <TestamentArrowIcon direction={guess.testament.direction} />
         </div>
 
         {/* Category */}
@@ -106,11 +99,7 @@ export default function LastGuessSummary({ guess, onViewAll, className, id }: La
           )}`}
         >
           <span>{guess.chapter.value || '?'}</span>
-          {guess.chapter.direction !== 'none' && (
-            <span className="text-lg font-bold">
-              {getArrow(guess.chapter.direction)}
-            </span>
-          )}
+          <ArrowIcon direction={guess.chapter.direction} />
         </div>
 
         {/* Verse */}
@@ -120,11 +109,7 @@ export default function LastGuessSummary({ guess, onViewAll, className, id }: La
           )}`}
         >
           <span>{guess.verse.value || '?'}</span>
-          {guess.verse.direction !== 'none' && (
-            <span className="text-lg font-bold">
-              {getArrow(guess.verse.direction)}
-            </span>
-          )}
+          <ArrowIcon direction={guess.verse.direction} />
         </div>
       </div>
 
@@ -147,7 +132,8 @@ export default function LastGuessSummary({ guess, onViewAll, className, id }: La
           <span>Higher/Lower</span>
         </div>
         <div className="flex items-center gap-1">
-          <span>←→</span>
+          <span>←</span>
+          <span>→</span>
           <span>Old/New</span>
         </div>
       </div>
