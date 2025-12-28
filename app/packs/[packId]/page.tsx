@@ -1,6 +1,7 @@
 import { getPuzzlePackage, getAllPuzzlePackages } from '@/lib/puzzles/loader';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
+import { ChevronLeftIcon } from '@heroicons/react/24/outline';
 
 interface PackDetailPageProps {
   params: Promise<{
@@ -29,7 +30,7 @@ export default async function PackDetailPage({ params }: PackDetailPageProps) {
         {/* Header */}
         <div className="flex items-center gap-4 mb-6">
           <Link href="/packs" className="btn btn-circle btn-ghost btn-sm">
-            ←
+            <ChevronLeftIcon className="h-4 w-4" />
           </Link>
           <div>
             <h1 className="text-3xl font-bold">{puzzlePackage.title}</h1>
