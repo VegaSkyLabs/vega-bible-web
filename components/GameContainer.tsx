@@ -86,30 +86,30 @@ export default function GameContainer({ puzzlePackage, initialPuzzleId }: GameCo
   const currentImagePath = currentPuzzle.imageClues[currentImageIndex] || currentPuzzle.imageClues[0];
 
   return (
-    <div className="min-h-screen bg-base-200 py-8 px-4">
+    <div className="min-h-screen bg-base-200 p-4">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
-        <div className="flex justify-between items-center mb-8">
-          <div className="flex items-center gap-4">
+        <div className="flex justify-between items-center mb-[10px]">
+          <div className="flex items-center gap-2">
             <Link href="/" className="btn btn-circle btn-ghost btn-sm">
               ←
             </Link>
             <div>
-              <h1 className="text-2xl font-bold">{puzzlePackage.title}</h1>
+              <h1 className="text-lg font-semibold">{puzzlePackage.title}</h1>
               <p className="text-xs opacity-60">Puzzle {gameState.currentVerseIndex + 1} of {totalVerses}</p>
             </div>
           </div>
-          <div className="stats shadow scale-90">
-            <div className="stat place-items-center p-2">
-              <div className="stat-title text-xs">Score</div>
-              <div className="stat-value text-primary text-2xl">{gameState.score}</div>
+          <div className="stats shadow">
+            <div className="stat place-items-center px-3 py-0.5">
+              <div className="stat-title text-xs leading-tight">Score</div>
+              <div className="stat-value text-primary text-lg">{gameState.score}</div>
             </div>
           </div>
         </div>
 
         {/* Progress Bar for Puzzles */}
         <progress
-          className="progress progress-primary w-full mb-4"
+          className="progress progress-primary w-full mb-2"
           value={gameState.currentVerseIndex}
           max={totalVerses}
         ></progress>
