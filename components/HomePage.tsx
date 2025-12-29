@@ -91,10 +91,17 @@ export default function HomePage() {
           />
         </div>
 
-        <div className="mt-8 text-center">
-          <Link href="/about" className="link link-hover text-base-content/50 text-sm">
+        <div className="mt-8 flex items-center justify-between">
+          <Link href="/about" className="btn btn-info h-10 rounded-lg">
             About this game
           </Link>
+          <a href="https://www.buymeacoffee.com/kevinlabs" target="_blank" rel="noopener noreferrer">
+            <img
+              src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+              alt="Buy Me A Coffee"
+              className="h-10 w-auto"
+            />
+          </a>
         </div>
       </div>
     </div>
