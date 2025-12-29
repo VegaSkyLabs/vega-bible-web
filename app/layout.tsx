@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { Analytics } from '@vercel/analytics/react';
 import './globals.css';
 import Navigation from '@/components/Navigation';
 
@@ -17,6 +18,7 @@ export default function RootLayout({
       <body className="antialiased">
         <Navigation />
         {children}
+        <Analytics />
       </body>
     </html>
   );
