@@ -1,0 +1,8 @@
+{
+  "id": "famous-verses",
+  "title": "Famous Verses",
+  "description": "Complete the most well-known and beloved verses from the Bible",
+  "coverImage": "/images/drag-mode/famous-verses-cover.png",
+  "difficulty": "Easy",
+  "puzzleIds": ["dd-001", "dd-002", "dd-003", "dd-004", "dd-005"]
+}
