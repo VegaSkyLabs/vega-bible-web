@@ -89,6 +89,18 @@ export default function HomePage() {
             description="Browse and play from our full puzzle library"
             accentColor="#f59e0b"
           />
+
+          <div className="divider my-2">New Game Mode</div>
+
+          <GameModeCard
+            href="/drag"
+            icon="🧩"
+            title="Verse Completion"
+            description="Drag words into blanks to complete verses"
+            status="New"
+            statusColor="success"
+            accentColor="#14b8a6"
+          />
         </div>
 
         <div className="mt-8 flex items-center justify-between">
