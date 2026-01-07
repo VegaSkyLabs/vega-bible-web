@@ -1,15 +1,37 @@
 import Link from 'next/link';
 
 interface GameModeCardProps {
+  /** Navigation URL for the game mode */
   href: string;
+  /** Emoji icon displayed on the left */
   icon: string;
+  /** Game mode title */
   title: string;
+  /** Short description of the game mode */
   description: string;
+  /** Optional badge text (e.g., "New", "BETA") */
   status?: string;
+  /** Badge color variant */
   statusColor?: 'success' | 'warning' | 'info' | 'error';
+  /** Left border accent color (CSS color value) */
   accentColor: string;
 }
 
+/**
+ * A clickable card linking to a game mode with icon, title, and optional status badge.
+ * Used on the home page to navigate between different puzzle types.
+ *
+ * @example
+ * <GameModeCard
+ *   href="/daily"
+ *   icon="📅"
+ *   title="Daily Puzzle"
+ *   description="A new verse to guess every day"
+ *   status="New"
+ *   statusColor="success"
+ *   accentColor="#22c55e"
+ * />
+ */
 function GameModeCard({
   href,
   icon,
