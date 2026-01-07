@@ -1,0 +1,16 @@
+{
+  "id": "4_proverbs_3_5-6",
+  "reference": "Proverbs 3:5-6",
+  "fullText": "Trust in the Lord with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.",
+  "blankedText": "{{blank}} in the Lord with all thine {{blank}}; and lean not unto thine own {{blank}}. In all thy ways {{blank}} him, and he shall {{blank}} thy paths.",
+  "missingWords": ["Trust", "heart", "understanding", "acknowledge", "direct"],
+  "distractorWords": ["Believe", "mind", "wisdom", "follow"],
+  "difficulty": "Medium",
+  "hint": "Wisdom about trusting God completely",
+  "parTimes": {
+    "easy": 35,
+    "medium": 50,
+    "hard": 70,
+    "extreme": 130
+  }
+}

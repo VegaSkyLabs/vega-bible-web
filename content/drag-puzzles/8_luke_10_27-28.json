@@ -1,0 +1,16 @@
+{
+  "id": "8_luke_10_27-28",
+  "reference": "Luke 10:27-28",
+  "fullText": "And he answering said, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy strength, and with all thy mind; and thy neighbour as thyself. And he said unto him, Thou hast answered right: this do, and thou shalt live.",
+  "blankedText": "And he answering said, Thou shalt {{blank}} the Lord thy God with all thy {{blank}}, and with all thy {{blank}}, and with all thy {{blank}}, and with all thy {{blank}}; and thy {{blank}} as thyself. And he said unto him, Thou hast answered right: this do, and thou shalt {{blank}}.",
+  "missingWords": ["love", "heart", "soul", "strength", "mind", "neighbour", "live"],
+  "distractorWords": ["spirit", "power", "brother"],
+  "difficulty": "Medium",
+  "hint": "Luke's account - the lawyer's answer",
+  "parTimes": {
+    "easy": 45,
+    "medium": 60,
+    "hard": 90,
+    "extreme": 150
+  }
+}

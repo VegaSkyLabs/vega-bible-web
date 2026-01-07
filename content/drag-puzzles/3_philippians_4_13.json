@@ -1,0 +1,16 @@
+{
+  "id": "3_philippians_4_13",
+  "reference": "Philippians 4:13",
+  "fullText": "I can do all things through Christ which strengtheneth me.",
+  "blankedText": "I can do {{blank}} things through {{blank}} which {{blank}} me.",
+  "missingWords": ["all", "Christ", "strengtheneth"],
+  "distractorWords": ["many", "God", "helps"],
+  "difficulty": "Medium",
+  "hint": "Paul's declaration of strength through faith",
+  "parTimes": {
+    "easy": 25,
+    "medium": 40,
+    "hard": 55,
+    "extreme": 100
+  }
+}

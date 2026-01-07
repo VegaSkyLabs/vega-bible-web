@@ -1,0 +1,16 @@
+{
+  "id": "2_psalm_23_1",
+  "reference": "Psalm 23:1",
+  "fullText": "The Lord is my shepherd; I shall not want.",
+  "blankedText": "The {{blank}} is my {{blank}}; I shall not {{blank}}.",
+  "missingWords": ["Lord", "shepherd", "want"],
+  "distractorWords": ["king", "need"],
+  "difficulty": "Easy",
+  "hint": "A comforting psalm about God's care",
+  "parTimes": {
+    "easy": 20,
+    "medium": 30,
+    "hard": 45,
+    "extreme": 90
+  }
+}
