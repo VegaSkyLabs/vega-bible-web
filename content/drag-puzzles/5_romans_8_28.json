@@ -1,0 +1,16 @@
+{
+  "id": "5_romans_8_28",
+  "reference": "Romans 8:28",
+  "fullText": "And we know that all things work together for good to them that love God, to them who are the called according to his purpose.",
+  "blankedText": "And we {{blank}} that all things {{blank}} together for {{blank}} to them that {{blank}} God, to them who are the {{blank}} according to his {{blank}}.",
+  "missingWords": ["know", "work", "good", "love", "called", "purpose"],
+  "distractorWords": ["believe", "come", "best", "serve", "chosen", "will"],
+  "difficulty": "Hard",
+  "hint": "God works everything for the good of believers",
+  "parTimes": {
+    "easy": 40,
+    "medium": 55,
+    "hard": 75,
+    "extreme": 140
+  }
+}

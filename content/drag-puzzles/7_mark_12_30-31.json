@@ -1,0 +1,16 @@
+{
+  "id": "7_mark_12_30-31",
+  "reference": "Mark 12:30-31",
+  "fullText": "And thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind, and with all thy strength: this is the first commandment. And the second is like, namely this, Thou shalt love thy neighbour as thyself. There is none other commandment greater than these.",
+  "blankedText": "And thou shalt {{blank}} the Lord thy God with all thy {{blank}}, and with all thy {{blank}}, and with all thy {{blank}}, and with all thy {{blank}}: this is the first commandment. And the second is like, namely this, Thou shalt love thy {{blank}} as thyself. There is none other commandment {{blank}} than these.",
+  "missingWords": ["love", "heart", "soul", "mind", "strength", "neighbour", "greater"],
+  "distractorWords": ["spirit", "power", "brother"],
+  "difficulty": "Medium",
+  "hint": "Mark's account of the greatest commandment",
+  "parTimes": {
+    "easy": 45,
+    "medium": 60,
+    "hard": 90,
+    "extreme": 150
+  }
+}

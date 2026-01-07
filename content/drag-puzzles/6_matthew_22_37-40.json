@@ -1,0 +1,16 @@
+{
+  "id": "6_matthew_22_37-40",
+  "reference": "Matthew 22:37-40",
+  "fullText": "Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind. This is the first and great commandment. And the second is like unto it, Thou shalt love thy neighbour as thyself. On these two commandments hang all the law and the prophets.",
+  "blankedText": "Jesus said unto him, Thou shalt {{blank}} the Lord thy God with all thy {{blank}}, and with all thy {{blank}}, and with all thy {{blank}}. This is the first and great {{blank}}. And the second is like unto it, Thou shalt love thy {{blank}} as thyself. On these two commandments hang all the {{blank}} and the prophets.",
+  "missingWords": ["love", "heart", "soul", "mind", "commandment", "neighbour", "law"],
+  "distractorWords": ["spirit", "strength", "brother"],
+  "difficulty": "Medium",
+  "hint": "The greatest commandment according to Jesus",
+  "parTimes": {
+    "easy": 45,
+    "medium": 60,
+    "hard": 90,
+    "extreme": 150
+  }
+}
