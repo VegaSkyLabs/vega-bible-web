@@ -1,0 +1,8 @@
+{
+  "id": "famous-verses",
+  "title": "Famous Verses",
+  "description": "Complete the most well-known and beloved verses from the Bible",
+  "coverImage": "/images/drag-mode/famous-verses-cover.png",
+  "difficulty": "Easy",
+  "puzzleIds": ["1_john_3_16", "2_psalm_23_1", "3_philippians_4_13", "4_proverbs_3_5-6", "5_romans_8_28"]
+}
