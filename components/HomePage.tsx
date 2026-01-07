@@ -97,8 +97,8 @@ export default function HomePage() {
             icon="🧩"
             title="Verse Completion"
             description="Drag words into blanks to complete verses"
-            status="New"
-            statusColor="success"
+            status="BETA"
+            statusColor="warning"
             accentColor="#14b8a6"
           />
         </div>
