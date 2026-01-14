@@ -99,6 +99,12 @@ export function useDragDropGame({
   const [puzzleProgress, setPuzzleProgress] = useState<PuzzleProgress | null>(null);
   //#endregion - Initial state
 
+  //#region - Reset state when mode changes
+  useEffect(() => {
+    setState(createInitialState());
+  }, [mode, createInitialState]);
+  //#endregion - Reset state when mode changes
+
   //#region - Load puzzle progress on mount
   useEffect(() => {
     progressStorage.getPuzzleProgress(puzzle.id).then(setPuzzleProgress);
@@ -145,7 +151,11 @@ export function useDragDropGame({
       setState((prev) => {
         // If slot already has a word, return it to bank
         const existingWord = prev.placements[slotIndex];
-        let newAvailable = prev.availableWords.filter((w) => w !== word);
+        // Remove only the first occurrence of the word (not all duplicates)
+        const wordIndex = prev.availableWords.indexOf(word);
+        let newAvailable = wordIndex !== -1
+          ? [...prev.availableWords.slice(0, wordIndex), ...prev.availableWords.slice(wordIndex + 1)]
+          : prev.availableWords;
         if (existingWord) {
           newAvailable = [...newAvailable, existingWord];
         }
@@ -326,8 +336,11 @@ export function useDragDropGame({
       const correctWord = expectedWords[emptyIndex];
       if (!correctWord) return prev;
 
-      // Remove from available words if present
-      const newAvailable = prev.availableWords.filter((w) => w !== correctWord);
+      // Remove only the first occurrence of the word (not all duplicates)
+      const wordIndex = prev.availableWords.indexOf(correctWord);
+      const newAvailable = wordIndex !== -1
+        ? [...prev.availableWords.slice(0, wordIndex), ...prev.availableWords.slice(wordIndex + 1)]
+        : prev.availableWords;
 
       // Place the word
       const newPlacements = [...prev.placements];
