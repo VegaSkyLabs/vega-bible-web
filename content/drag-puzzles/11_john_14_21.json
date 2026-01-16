@@ -1,0 +1,16 @@
+{
+  "id": "11_john_14_21",
+  "reference": "John 14:21",
+  "fullText": "He that hath my commandments, and keepeth them, he it is that loveth me: and he that loveth me shall be loved of my Father, and I will love him, and will manifest myself to him.",
+  "blankedText": "He that hath my {{blank}}, and {{blank}} them, he it is that {{blank}} me: and he that loveth me shall be {{blank}} of my Father, and I will {{blank}} him, and will {{blank}} myself to him.",
+  "missingWords": ["commandments", "keepeth", "loveth", "loved", "love", "manifest"],
+  "distractorWords": ["teachings", "follows", "serves", "blessed", "show", "reveal"],
+  "difficulty": "Hard",
+  "hint": "Jesus promises to reveal himself to those who love and obey him",
+  "parTimes": {
+    "easy": 40,
+    "medium": 55,
+    "hard": 75,
+    "extreme": 140
+  }
+}

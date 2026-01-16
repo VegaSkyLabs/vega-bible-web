@@ -1,0 +1,16 @@
+{
+  "id": "15_2_timothy_2_3-4",
+  "reference": "2 Timothy 2:3-4",
+  "fullText": "Thou therefore endure hardness, as a good soldier of Jesus Christ. No man that warreth entangleth himself with the affairs of this life; that he may please him who hath chosen him to be a soldier.",
+  "blankedText": "Thou therefore {{blank}} hardness, as a {{blank}} soldier of Jesus Christ. No man that {{blank}} entangleth himself with the affairs of this {{blank}}; that he may {{blank}} him who hath chosen him to be a {{blank}}.",
+  "missingWords": ["endure", "good", "warreth", "life", "please", "soldier"],
+  "distractorWords": ["suffer", "great", "fights", "world", "serve", "warrior"],
+  "difficulty": "Hard",
+  "hint": "Paul's encouragement to Timothy about spiritual warfare",
+  "parTimes": {
+    "easy": 40,
+    "medium": 55,
+    "hard": 75,
+    "extreme": 140
+  }
+}

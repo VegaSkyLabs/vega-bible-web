@@ -1,0 +1,16 @@
+{
+  "id": "13_hebrews_13_14",
+  "reference": "Hebrews 13:14",
+  "fullText": "For here have we no continuing city, but we seek one to come.",
+  "blankedText": "For here have we no {{blank}} city, but we {{blank}} one to {{blank}}.",
+  "missingWords": ["continuing", "seek", "come"],
+  "distractorWords": ["lasting", "search", "arrive"],
+  "difficulty": "Easy",
+  "hint": "Our true home is not on this earth",
+  "parTimes": {
+    "easy": 25,
+    "medium": 40,
+    "hard": 55,
+    "extreme": 100
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "10_john_14_15",
+  "reference": "John 14:15",
+  "fullText": "If ye love me, keep my commandments.",
+  "blankedText": "If ye {{blank}} me, {{blank}} my {{blank}}.",
+  "missingWords": ["love", "keep", "commandments"],
+  "distractorWords": ["follow", "obey", "teachings"],
+  "difficulty": "Easy",
+  "hint": "Jesus speaks about love and obedience",
+  "parTimes": {
+    "easy": 25,
+    "medium": 40,
+    "hard": 55,
+    "extreme": 100
+  }
+}
