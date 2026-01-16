@@ -1,0 +1,16 @@
+{
+  "id": "16_james_1_12",
+  "reference": "James 1:12",
+  "fullText": "Blessed is the man that endureth temptation: for when he is tried, he shall receive the crown of life, which the Lord hath promised to them that love him.",
+  "blankedText": "{{blank}} is the man that {{blank}} temptation: for when he is {{blank}}, he shall receive the {{blank}} of life, which the Lord hath {{blank}} to them that {{blank}} him.",
+  "missingWords": ["Blessed", "endureth", "tried", "crown", "promised", "love"],
+  "distractorWords": ["Happy", "resists", "tested", "gift", "given", "serve"],
+  "difficulty": "Hard",
+  "hint": "The reward for those who persevere through trials",
+  "parTimes": {
+    "easy": 40,
+    "medium": 55,
+    "hard": 75,
+    "extreme": 140
+  }
+}

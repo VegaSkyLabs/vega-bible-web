@@ -1,0 +1,8 @@
+{
+  "id": "important-verses",
+  "title": "Important Verses",
+  "description": "Key verses about love, obedience, and what God truly desires",
+  "coverImage": "/images/drag-mode/important-verses-cover.png",
+  "difficulty": "Medium",
+  "puzzleIds": ["9_hosea_6_6", "12_romans_12_11", "13_hebrews_13_14", "14_1_peter_1_17", "15_2_timothy_2_3-4", "16_james_1_12"]
+}

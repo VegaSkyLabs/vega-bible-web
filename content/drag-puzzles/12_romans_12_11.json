@@ -1,0 +1,16 @@
+{
+  "id": "12_romans_12_11",
+  "reference": "Romans 12:11",
+  "fullText": "Not slothful in business; fervent in spirit; serving the Lord.",
+  "blankedText": "Not {{blank}} in business; {{blank}} in spirit; {{blank}} the Lord.",
+  "missingWords": ["slothful", "fervent", "serving"],
+  "distractorWords": ["lazy", "zealous", "following"],
+  "difficulty": "Easy",
+  "hint": "Paul's instruction about diligent service to God",
+  "parTimes": {
+    "easy": 25,
+    "medium": 40,
+    "hard": 55,
+    "extreme": 100
+  }
+}

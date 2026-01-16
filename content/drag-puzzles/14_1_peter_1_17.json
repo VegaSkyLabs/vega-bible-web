@@ -1,0 +1,16 @@
+{
+  "id": "14_1_peter_1_17",
+  "reference": "1 Peter 1:17",
+  "fullText": "And if ye call on the Father, who without respect of persons judgeth according to every man's work, pass the time of your sojourning here in fear.",
+  "blankedText": "And if ye call on the {{blank}}, who without {{blank}} of persons {{blank}} according to every man's {{blank}}, pass the time of your {{blank}} here in {{blank}}.",
+  "missingWords": ["Father", "respect", "judgeth", "work", "sojourning", "fear"],
+  "distractorWords": ["Lord", "regard", "judges", "deeds", "journey", "reverence"],
+  "difficulty": "Hard",
+  "hint": "Peter reminds us to live reverently as strangers on earth",
+  "parTimes": {
+    "easy": 40,
+    "medium": 55,
+    "hard": 75,
+    "extreme": 140
+  }
+}

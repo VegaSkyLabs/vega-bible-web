@@ -1,0 +1,16 @@
+{
+  "id": "9_hosea_6_6",
+  "reference": "Hosea 6:6",
+  "fullText": "For I desired mercy, and not sacrifice; and the knowledge of God more than burnt offerings.",
+  "blankedText": "For I desired {{blank}}, and not {{blank}}; and the {{blank}} of God more than burnt {{blank}}.",
+  "missingWords": ["mercy", "sacrifice", "knowledge", "offerings"],
+  "distractorWords": ["justice", "prayer", "understanding", "tributes"],
+  "difficulty": "Medium",
+  "hint": "God prefers mercy and knowledge over religious rituals",
+  "parTimes": {
+    "easy": 35,
+    "medium": 50,
+    "hard": 70,
+    "extreme": 130
+  }
+}
