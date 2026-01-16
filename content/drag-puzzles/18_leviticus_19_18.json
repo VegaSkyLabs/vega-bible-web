@@ -1,0 +1,16 @@
+{
+  "id": "18_leviticus_19_18",
+  "reference": "Leviticus 19:18",
+  "fullText": "Thou shalt not avenge, nor bear any grudge against the children of thy people, but thou shalt love thy neighbour as thyself: I am the LORD.",
+  "blankedText": "Thou shalt not {{blank}}, nor bear any {{blank}} against the children of thy people, but thou shalt {{blank}} thy {{blank}} as thyself: I am the LORD.",
+  "missingWords": ["avenge", "grudge", "love", "neighbour"],
+  "distractorWords": ["hate", "anger", "serve", "brother"],
+  "difficulty": "Medium",
+  "hint": "The second greatest commandment's Old Testament source",
+  "parTimes": {
+    "easy": 30,
+    "medium": 40,
+    "hard": 60,
+    "extreme": 100
+  }
+}

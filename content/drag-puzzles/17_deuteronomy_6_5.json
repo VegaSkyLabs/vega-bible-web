@@ -1,0 +1,16 @@
+{
+  "id": "17_deuteronomy_6_5",
+  "reference": "Deuteronomy 6:5",
+  "fullText": "And thou shalt love the LORD thy God with all thine heart, and with all thy soul, and with all thy might.",
+  "blankedText": "And thou shalt {{blank}} the LORD thy God with all thine {{blank}}, and with all thy {{blank}}, and with all thy {{blank}}.",
+  "missingWords": ["love", "heart", "soul", "might"],
+  "distractorWords": ["fear", "mind", "strength", "spirit"],
+  "difficulty": "Easy",
+  "hint": "The Shema - the foundation Jesus quoted for the greatest commandment",
+  "parTimes": {
+    "easy": 25,
+    "medium": 35,
+    "hard": 50,
+    "extreme": 90
+  }
+}
