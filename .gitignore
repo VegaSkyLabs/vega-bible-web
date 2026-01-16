@@ -45,6 +45,10 @@ yarn-error.log*
 *~
 .DS_Store
 
+# LLM Helpers
+CLAUDE.md
+.claudeignore
+
 # OS files
 .DS_Store
 .DS_Store?
